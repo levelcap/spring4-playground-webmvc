@@ -3,6 +3,7 @@ package com.levelcap.spring.playground.webmvc.config;
 import java.util.List;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mobile.device.DeviceResolverHandlerInterceptor;
 import org.springframework.mobile.device.DeviceWebArgumentResolver;
@@ -13,8 +14,16 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.ServletWebArgumentResolverAdapter;
 
+
+/**
+ * MVC Configuration class.
+ * 
+ * @author Dave Cohen
+ * 
+ */
 @EnableWebMvc
 @Configuration
+@ComponentScan(basePackages = "com.levelcap.spring.playground.webmvc")
 class WebMvcConfig extends WebMvcConfigurerAdapter
 {
     //Add a deviceResolverHandlerInterceptor Bean to the Web Configuration for Device handling
