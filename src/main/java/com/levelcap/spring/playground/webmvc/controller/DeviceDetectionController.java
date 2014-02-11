@@ -4,11 +4,28 @@ import org.springframework.mobile.device.Device;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//Using @RestController, new to Spring 4, that removes the need for @ResponseBody on methods
+/**
+ * Controller for the /device endpoint which performs basic device detection.
+ * Using @RestController, new to Spring 4, that removes the need for @ResponseBody
+ * on @RequestMapping methods.
+ * 
+ * @author Dave Cohen
+ * 
+ */
 @RestController
 public class DeviceDetectionController
 {
 
+    /**
+     * detectDevice takes a Device parameter and checks it for standard device
+     * types (normal, mobile, tablet).
+     * 
+     * @param device
+     *            WebMvcConfig adds the interceptors and argument resolvers
+     *            required to handle the Device argument
+     * @return String message containing the device type.
+     */
+    // and to populate it with the correct data.
     @RequestMapping("/device")
     public String detectDevice(Device device)
     {

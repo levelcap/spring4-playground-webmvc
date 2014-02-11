@@ -10,11 +10,22 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
+/**
+ * Defines the startup and context behavior of the web application.
+ * 
+ * @author dcohen
+ * 
+ */
 public class AppInitializer implements WebApplicationInitializer
 {
     private static final String CONFIG_LOCATION = "com.levelcap.spring.playground.webmvc.config";
     private static final String MAPPING_URL = "/*";
 
+    /**
+     * Defines the startup behavior of the web application. Adds listeners,
+     * dispatcher and basic mapping.
+     * 
+     */
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException
     {
@@ -26,6 +37,11 @@ public class AppInitializer implements WebApplicationInitializer
         dispatcher.addMapping(MAPPING_URL);
     }
 
+    /**
+     * Defines the getContext behavior of the web application, pulling in the
+     * Configuration classes from CONFIG_LOCATION.
+     * 
+     */
     private AnnotationConfigWebApplicationContext getContext()
     {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
